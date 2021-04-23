@@ -43,7 +43,7 @@
 					<td>
 						<div class="d-flex d-justify-content-center">
 							<a class="btn btn-warning mr-3">ALTERAR</a>
-							<a class="btn btn-danger">EXCLUIR</a>
+							<a href="/excluir?nome=${cidade.nome}&estado=${cidade.estado}" class="btn btn-danger">EXCLUIR</a>
 						</div>
 					</td>
 				</tr>
