@@ -1,4 +1,4 @@
-package com.br.utfpr.java.web.visao;
+package com.br.utfpr.java.web.cidade;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,11 +46,7 @@ public class CidadeController {
 
 			return ("/crud");
 		} else {
-			var novaCidade = new CidadeEntidade();
-			novaCidade.setNome(cidade.getNome());
-			novaCidade.setEstado(cidade.getEstado());
-			
-			repository.save(novaCidade);
+			repository.save(cidade.clonar());
 		}
 
 		return "redirect:/";

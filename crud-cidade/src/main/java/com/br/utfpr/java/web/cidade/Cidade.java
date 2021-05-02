@@ -1,4 +1,4 @@
-package com.br.utfpr.java.web.visao;
+package com.br.utfpr.java.web.cidade;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -16,6 +16,19 @@ public final class Cidade {
 	public Cidade(final String nome, final String estado) {
 		this.nome = nome;
 		this.estado = estado;
+	}
+	
+	public CidadeEntidade clonar() {
+		var cidadeEntidade = new CidadeEntidade();
+		
+		cidadeEntidade.setNome(this.getNome());
+		cidadeEntidade.setEstado(this.getEstado());
+		
+		return cidadeEntidade;
+	}
+	
+	public Cidade clonar(CidadeEntidade cidade) {
+		return new Cidade(cidade.getNome(), cidade.getEstado());
 	}
 
 	public String getEstado() {
